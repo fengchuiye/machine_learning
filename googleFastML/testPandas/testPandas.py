@@ -36,4 +36,24 @@ cities['Area square miles'] = pd.Series([46.87, 176.53, 97.92])
 cities['Population density'] = cities['Population'] / cities['Area square miles']
 print(cities)
 
+#practice 1
+cities['new bool'] = (cities['Area square miles'] > 50) & cities['City name'].apply(lambda name: name.startswith('San'))
+print(cities)
+
+#index
+print(city_names.index)
+print(cities.index)
+
+print(cities.reindex([2, 0, 1]))
+#print(cities)
+
+print(cities.reindex(np.random.permutation(cities.index)))
+#print(cities)
+
+
+#practice 2
+print(cities.reindex([2, 0, 4, 1]))
+
+
+
 
